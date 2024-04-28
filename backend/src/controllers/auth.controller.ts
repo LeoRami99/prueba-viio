@@ -7,7 +7,7 @@ class AuthController {
 	public signUp = async (req: Request, res: Response) => {
 		try {
 			const { name, email, password } = req.body;
-			if (!schemaUser.validate({ name, email, password }).error) {
+			if (schemaUser.validate({ name, email, password }).error) {
 				return res.status(400).json({
 					ok: false,
 					message: schemaUser.validate({ name, email, password }).error?.details[0].message,
