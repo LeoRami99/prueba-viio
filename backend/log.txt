@@ -1,0 +1,11 @@
+28/4/2024 15:42:18 - Unexpected token } in JSON at position 44 - Stack: SyntaxError: Unexpected token } in JSON at position 44
+    at JSON.parse (<anonymous>)
+    at parse (/home/leonardo/viio/backend/node_modules/body-parser/lib/types/json.js:92:19)
+    at /home/leonardo/viio/backend/node_modules/body-parser/lib/read.js:128:18
+    at AsyncResource.runInAsyncScope (node:async_hooks:203:9)
+    at invokeCallback (/home/leonardo/viio/backend/node_modules/raw-body/index.js:238:16)
+    at done (/home/leonardo/viio/backend/node_modules/raw-body/index.js:227:7)
+    at IncomingMessage.onEnd (/home/leonardo/viio/backend/node_modules/raw-body/index.js:287:7)
+    at IncomingMessage.emit (node:events:525:35)
+    at IncomingMessage.emit (node:domain:489:12)
+    at endReadableNT (node:internal/streams/readable:1358:12)

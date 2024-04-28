@@ -1,0 +1,44 @@
+services:
+  db:
+    image: mysql
+    volumes:
+      - mysql_data:/var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=password_Viio_prueba
+      - MYSQL_DATABASE=viio_database
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  backend:
+    build: ./backend
+    ports:
+      - "3001:3001"
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - DB_HOST=db
+      - DB_PORT=3307
+      - DB_USER=root
+      - DB_PASSWORD=password_Viio_prueba
+      - DB_NAME=viio_database
+      - JWT_SECRET_KEY=secret
+    depends_on:
+      db:
+        condition: service_healthy
+  frontend:
+    build: ./frontend
+    ports:
+      - "3000:3000"
+    # environment:
+    #   - API_URL="http://localhost:3001/api/v1"
+    #   - JWT_SECRET="secret"
+    depends_on:
+      backend:
+        condition: service_started
+
+volumes:
+  mysql_data:
