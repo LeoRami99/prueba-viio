@@ -38,7 +38,7 @@ User.init(
 	}
 );
 const schemaUser = Joi.object({
-	name: Joi.string().min(3).max(100).optional().required().messages({
+	name: Joi.string().min(3).max(100).optional().messages({
 		"string.empty": "The name field cannot be empty",
 		"string.min": "The name field must be at least {#limit} characters long",
 		"string.max": "The name field must be no more than {#limit} characters long",
