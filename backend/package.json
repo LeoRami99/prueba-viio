@@ -1,5 +1,5 @@
 {
-  "name": "api_backend_plantilla",
+  "name": "api_backend",
   "version": "1.0.0",
   "description": "Plantilla para proyectos backend",
   "main": "src/app.ts",
