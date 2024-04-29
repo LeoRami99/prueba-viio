@@ -25,6 +25,7 @@ Este proyecto consiste en una aplicación web desarrollada con un **frontend en 
 -   **MySQL**: Sistema de gestión de base de datos SQL.
 -   **ORM**: Utilizado para modelar y validar datos de manera eficiente dentro de la base de datos.
 -   **SHA-256**: Algoritmo de encriptación para las contraseñas de los usuarios.
+-   **DOCUMENTACIÓN** : La documentación de la API se encuentra en /api/v1/docs
 
 ### Características
 
